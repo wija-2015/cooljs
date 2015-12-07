@@ -24,6 +24,7 @@ public class Managerrh implements Serializable {
 	private String matriculeUser;
 	private String nomUser;
 	private String prenomUser;
+	private String password;
 
 	//bi-directional many-to-one association to Collaborateur
 	@JsonIgnore
@@ -93,5 +94,14 @@ public class Managerrh implements Serializable {
 
 	public void setCollaborateurs(Collection<Collaborateur> collaborateurs) {
 		this.collaborateurs = collaborateurs;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }

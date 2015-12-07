@@ -29,7 +29,7 @@
 		     <th  style="width:15%">Email</th>
 			 <th  style="width:15%">Action</th>
           </tr>
-		  <tr ng-repeat="c in managers"><td>{{c[1]}}</td><td>{{c[2]}}</td><td>{{c[3]}}</td><td>{{c[4]}}</td>
+		  <tr ng-repeat="c in managers"><td>{{c.nomUser}}</td><td>{{c.prenomUser}}</td><td>{{c.matriculeUser}}</td><td>{{c.mailUser}}</td>
 		  <td><button class="btn btn-info" onclick="supprimer(c.idManager)">Modifier</button></td></tr>
         </thead>
         <tbody>

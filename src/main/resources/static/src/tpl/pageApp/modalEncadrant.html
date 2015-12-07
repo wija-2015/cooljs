@@ -29,7 +29,25 @@
               <div class="col-lg-10">
                 <input type="email" class="form-control" name="mailUser" placeholder="Email du collaborateur" ng-model="encadrant.mailUser">
               </div>
-            </div>		
+            </div>	
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Mot de passe</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" name="" placeholder="password du manager" ng-model="encadrant.password">
+              </div>
+            </div>
+			<div class="form-group">
+
+			<div class="form-group" ng-controller="ProfilCtrl">
+              <label class="col-lg-2 control-label">Profil</label>
+              <div class="col-lg-10">
+           <!--    <select class="form-control" ng-model="collaborateur.idManagerrh"><option>1</option><option>2</option><option>3</option></select>-->
+            <select ng-model="encadrant.idProfil"><option ng-repeat="p in profils" ng-value="p.idProfil">{{p.nomProfil}}</option></select>  
+              
+			   </div>
+
+            </div>
+            
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
                 <button type="submit" class="btn btn-info" ng-click="inserer_encadrant()">Valider </button>

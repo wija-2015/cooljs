@@ -2,15 +2,17 @@ app.controller("CollaborateurCtrl",function(Collaborateur,Manager,$scope){
            Collaborateur.findAll().then(function(d) {
     $scope.collaborateurs = d;
   });
-           Manager.findAll().then(function(d) {
-       	    $scope.managers = d;
-       	  });
+         
     
           });
 
 app.controller('ModalInstanceCtrlCollab', ['$scope','$http','$modalInstance','Manager', function($scope, $http,$modalInstance,Manager) {
   	$scope.collaborateur={} ;
-
+	
+    Manager.findAll().then(function(d) {
+	    $scope.managers = d;
+	  });
+	  
     $scope.inserer_collab = function () {
     	//var params = $scope.collaborateur.Managerrh.idManagerrh ;
     	datas=$scope.collaborateur
@@ -20,7 +22,11 @@ app.controller('ModalInstanceCtrlCollab', ['$scope','$http','$modalInstance','Ma
     	    method: 'POST',
     	    data:datas
     	})
-    	.success(function(response) {  console.log(response);console.log(JSON.stringify($scope.collaborateur))});
+    	.success(function(response) {  
+		          console.log(response);
+				  console.log(JSON.stringify($scope.collaborateur));
+				  $scope.cancel();
+				  alerte("Ajout Succés")});
 
     };
 

@@ -12,6 +12,8 @@ public class Qualification implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idQualification;
 	private String remarque;
+	private String nomQualification;
+	private int poidsQualification;
 
 	//bi-directional many-to-one association to Feedback
 	@ManyToOne
@@ -23,22 +25,16 @@ public class Qualification implements Serializable {
 	@JoinColumn(name="idTheme")
 	private Theme theme;
 
-	//bi-directional many-to-one association to Typequalification
-	@ManyToOne
-	@JoinColumn(name="idTypeQ")
-	private Typequalification typequalification;
-
 	public Qualification() {
 	}
 
 	public Qualification(int idQualification, String remarque,
-			Feedback feedback, Theme theme, Typequalification typequalification) {
+			Feedback feedback, Theme theme) {
 		super();
 		this.idQualification = idQualification;
 		this.remarque = remarque;
 		this.feedback = feedback;
 		this.theme = theme;
-		this.typequalification = typequalification;
 	}
 
 	public int getIdQualification() {
@@ -73,11 +69,19 @@ public class Qualification implements Serializable {
 		this.theme = theme;
 	}
 
-	public Typequalification getTypequalification() {
-		return this.typequalification;
+	public String getNomQualification() {
+		return nomQualification;
 	}
 
-	public void setTypequalification(Typequalification typequalification) {
-		this.typequalification = typequalification;
+	public void setNomQualification(String nomQualification) {
+		this.nomQualification = nomQualification;
+	}
+
+	public int getPoidsQualification() {
+		return poidsQualification;
+	}
+
+	public void setPoidsQualification(int poidsQualification) {
+		this.poidsQualification = poidsQualification;
 	}
 }

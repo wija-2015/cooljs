@@ -9,7 +9,7 @@ app.controller('ModalInstanceCtrlTheme', ['$scope','$http','$modalInstance', fun
   	$scope.theme={} ;
     $scope.inserer_theme = function () {
 		 $http.post("http://localhost:8181/themes/save",$scope.theme)
-    .success(function(response) {  console.log(response);console.log(JSON.stringify($scope.theme))});
+    .success(function(response) {  console.log(response);  console.log(JSON.stringify($scope.theme));  $scope.cancel();});
 
     };
 

@@ -28,6 +28,7 @@ public class Collaborateur implements Serializable {
 	private String matriculeUser;
 	private String nomUser;
 	private String prenomUser;
+	private String password;
 
 	//bi-directional many-to-one association to Bap
 	@JsonIgnore
@@ -142,6 +143,12 @@ public class Collaborateur implements Serializable {
 
 	public void setFeedbacks(Collection<Feedback> feedbacks) {
 		this.feedbacks = feedbacks;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

@@ -9,7 +9,7 @@ app.controller('ModalInstanceCtrlCategorie', ['$scope','$http','$modalInstance',
   	$scope.categorie={} ;
     $scope.inserer_categorie = function () {
 		 $http.post("http://localhost:8181/categories/save",$scope.categorie)
-    .success(function(response) {  console.log(response);console.log(JSON.stringify($scope.categorie))});
+    .success(function(response) {  console.log(response);   console.log(JSON.stringify($scope.categorie));   $scope.cancel();});
 
     };
 

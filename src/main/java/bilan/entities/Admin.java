@@ -21,6 +21,7 @@ public class Admin implements Serializable {
 	private String matriculeUser;
 	private String nomUser;
 	private String prenomUser;
+	private String password;
 
 	public Admin() {
 	}
@@ -73,6 +74,14 @@ public class Admin implements Serializable {
 
 	public void setPrenomUser(String prenomUser) {
 		this.prenomUser = prenomUser;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 }

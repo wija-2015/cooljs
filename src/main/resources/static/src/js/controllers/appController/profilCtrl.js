@@ -1,15 +1,18 @@
-/* app.controller("CollaborateurCProfil",function(Profil,$scope){
+app.controller('ProfilCtrl',function(Profil,$scope){
            Profil.findAll().then(function(d) {
     $scope.profils = d;
   });
     
-          }); */
+          });
 
 app.controller('ModalInstanceCtrlProfil', ['$scope','$http','$modalInstance', function($scope, $http,$modalInstance) {
   	$scope.profil={} ;
     $scope.inserer_profil = function () {
 		 $http.post("http://localhost:8181/profils/save",$scope.profil)
-    .success(function(response) {  console.log(response);console.log(JSON.stringify($scope.profil))});
+    .success(function(response) {  
+	      console.log(response);
+		  console.log(JSON.stringify($scope.profil));
+		  $scope.cancel();});
 
     };
 

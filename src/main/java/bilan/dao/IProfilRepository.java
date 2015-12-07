@@ -27,7 +27,7 @@ public interface IProfilRepository extends JpaRepository<Profil, Long>{
 	@Query("update Profil a set a.nomProfil= :nom where a.idProfil = :x")
 	public int updateProfil(@Param("nom")String nom,@Param("x")int id);
 	
-	@Query("select m.nomProfil from Profil m")
+	@Query("select m from Profil m")
 	public List<Profil> findAllProfils();
 	
 	//public List<Admin> findAll();

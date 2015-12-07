@@ -9,7 +9,7 @@ app.controller('ModalInstanceCtrlManager', ['$scope','$http','$modalInstance', f
   	$scope.manager={} ;
     $scope.inserer_manager = function () {
 		 $http.post("http://localhost:8181/managers/save",$scope.manager)
-    .success(function(response) {  console.log(response);console.log(JSON.stringify($scope.manager))});
+    .success(function(response) {  console.log(response);   console.log(JSON.stringify($scope.manager));   $scope.cancel();});
 
     };
 

@@ -14,9 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import bilan.dtos.CollaborateurDTO;
+import bilan.dtos.EncadrantDTO;
 import bilan.entities.Collaborateur;
 import bilan.entities.Encadrant;
+import bilan.entities.Managerrh;
+import bilan.entities.Profil;
 import bilan.service.IEncadrantService;
+import bilan.service.IProfilService;
 
 @RestController
 @RequestMapping("encadrants")
@@ -24,6 +29,8 @@ public class EncadrantController {
 
 @Autowired
 private IEncadrantService encadrantService;
+@Autowired
+private IProfilService profilService;
 
 @ResponseBody
 @RequestMapping(value="findAll", method = RequestMethod.GET)
@@ -31,8 +38,18 @@ public List<Encadrant> getManagers(){
 return encadrantService.toutsEncadrants();
 }
 @RequestMapping(value="save", method = RequestMethod.POST,consumes={"application/json"},produces ={"application/json"})
-public Encadrant saveEncadrant(@RequestBody Encadrant e, HttpServletResponse response){
-	return encadrantService.ajouterEncadrant(e) ;
+public Encadrant saveEncadrant(@RequestBody EncadrantDTO c,HttpServletResponse response){
+
+	Encadrant enc=new Encadrant();
+	enc.setNomUser(c.getNomUser());
+	enc.setPrenomUser(c.getPrenomUser());
+	enc.setMailUser(c.getMailUser());
+	enc.setMatriculeUser(c.getMatriculeUser());
+	enc.setPassword(c.getPassword());
+	Profil p= new Profil();
+	p=profilService.trouverProfil(c.getIdProfil());
+	enc.setProfil(p);
+	return encadrantService.ajouterEncadrant(enc) ;
 }
 @RequestMapping(value="/{id}", method = RequestMethod.GET)
 public Encadrant findCollab(@PathVariable("id") int id){

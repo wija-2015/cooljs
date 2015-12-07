@@ -1,28 +1,19 @@
 package bilan.dtos;
 
-import java.util.Date;
-
-public class CollaborateurDTO {
-	private int idCollaborateur;
-	private Date dateRecrutement;
+public class EncadrantDTO {
+	
+	private int idEncadrant;
 	private String mailUser;
 	private String matriculeUser;
 	private String nomUser;
 	private String prenomUser;
 	private String password;
-	private int idManagerrh ;
-	
-	public int getIdCollaborateur() {
-		return idCollaborateur;
+	private int idProfil;
+	public int getIdEncadrant() {
+		return idEncadrant;
 	}
-	public void setIdCollaborateur(int idCollaborateur) {
-		this.idCollaborateur = idCollaborateur;
-	}
-	public Date getDateRecrutement() {
-		return dateRecrutement;
-	}
-	public void setDateRecrutement(Date dateRecrutement) {
-		this.dateRecrutement = dateRecrutement;
+	public void setIdEncadrant(int idEncadrant) {
+		this.idEncadrant = idEncadrant;
 	}
 	public String getMailUser() {
 		return mailUser;
@@ -48,16 +39,19 @@ public class CollaborateurDTO {
 	public void setPrenomUser(String prenomUser) {
 		this.prenomUser = prenomUser;
 	}
-	public int getIdManagerrh() {
-		return idManagerrh;
-	}
-	public void setIdManagerrh(int idManagerrh) {
-		this.idManagerrh = idManagerrh;
-	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public int getIdProfil() {
+		return idProfil;
+	}
+	public void setIdProfil(int idProfil) {
+		this.idProfil = idProfil;
+	}
+	
+	
+
 }

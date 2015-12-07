@@ -38,22 +38,20 @@ return  collabService.toutsCollabs();
 }
 @RequestMapping(value="save", method = RequestMethod.POST,consumes={"application/json"},produces ={"application/json"})
 public Collaborateur saveCollab(@RequestBody CollaborateurDTO c,HttpServletResponse response){
-	//c.getManagerrh().getMatriculeUser()
-	//Managerrh Manager = new Managerrh();
-	//c.setManagerrh(new Managerrh());
-	//Manager = managerService.trouverManager(c.getManagerrh().getIdManagerrh());
-	//c.setManagerrh(Manager);
-//	c.getManagerrh().getIdManagerrh()
+
 	Collaborateur collab=new Collaborateur();
 	collab.setNomUser(c.getNomUser());
+	collab.setPrenomUser(c.getPrenomUser());
 	collab.setMailUser(c.getMailUser());
 	collab.setMatriculeUser(c.getMatriculeUser());
 	collab.setDateRecrutement(c.getDateRecrutement());
+	collab.setPassword(c.getPassword());
 	Managerrh Manager = new Managerrh();
 	Manager = managerService.trouverManager(c.getIdManagerrh()) ;
 	collab.setManagerrh(Manager);
 	return collabService.ajouterCollab(collab) ;
 }
+
 @RequestMapping(value="/{id}", method = RequestMethod.GET)
 public Collaborateur findCollab(@PathVariable("id") int id){
 	return collabService.trouverCollab(id);

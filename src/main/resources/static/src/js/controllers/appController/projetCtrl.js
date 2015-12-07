@@ -9,7 +9,10 @@ app.controller('ModalInstanceCtrlProjet', ['$scope','$http','$modalInstance', fu
   	$scope.projet={} ;
     $scope.inserer_projet = function () {
 		 $http.post("http://localhost:8181/projets/save",$scope.projet)
-    .success(function(response) {  console.log(response);console.log(JSON.stringify($scope.projet))});
+    .success(function(response) {  
+	        console.log(response);
+			console.log(JSON.stringify($scope.projet));
+			$scope.cancel();});
 
     };
 

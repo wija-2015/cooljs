@@ -9,7 +9,7 @@ app.controller('ModalInstanceCtrlEncadrant', ['$scope','$http','$modalInstance',
   	$scope.encadrant={} ;
     $scope.inserer_encadrant = function () {
 		 $http.post("http://localhost:8181/encadrants/save",$scope.encadrant)
-    .success(function(response) {  console.log(response);console.log(JSON.stringify($scope.encadrant))});
+    .success(function(response) {  console.log(response);   console.log(JSON.stringify($scope.encadrant));   $scope.cancel();});
 
     };
 

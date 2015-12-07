@@ -22,6 +22,7 @@ public class Encadrant implements Serializable {
 	private String matriculeUser;
 	private String nomUser;
 	private String prenomUser;
+	private String password;
 
 	//bi-directional many-to-one association to Profil
 	@ManyToOne
@@ -117,6 +118,14 @@ public class Encadrant implements Serializable {
 
 	public void setFeedbacks(Collection<Feedback> feedbacks) {
 		this.feedbacks = feedbacks;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
