@@ -5,8 +5,13 @@ app.controller("EncadrantCtrl",function(Encadrant,$scope){
     
           });
 	
-app.controller('ModalInstanceCtrlEncadrant', ['$scope','$http','$modalInstance', function($scope, $http,$modalInstance) {
+app.controller('ModalInstanceCtrlEncadrant', ['$scope','$http','$modalInstance','Profil', function($scope, $http,$modalInstance,Profil) {
   	$scope.encadrant={} ;
+	
+	Profil.findAll().then(function(d){
+		$scope.profils=d;
+	});
+	
     $scope.inserer_encadrant = function () {
 		 $http.post("http://localhost:8181/encadrants/save",$scope.encadrant)
     .success(function(response) {  console.log(response);   console.log(JSON.stringify($scope.encadrant));   $scope.cancel();});

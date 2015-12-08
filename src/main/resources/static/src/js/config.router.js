@@ -34,6 +34,8 @@ angular.module('app')
                     }]
                   }
               })
+			  
+			  
 			  .state('app.collaborateurs', {
                   url: '/collaborateurs',
                   templateUrl: 'tpl/pageApp/collaborateurs.html'
@@ -46,6 +48,31 @@ angular.module('app')
                   url: '/encadrants',
                   templateUrl: 'tpl/pageApp/encadrants.html'
               })
+			  .state('app.ficheObjectifs', {
+                  url: '/ficheObjectifs',
+                  templateUrl: 'tpl/pageApp/ficheObjectifs.html'
+              })
+			  .state('app.ajouterFeedback', {
+                  url: '/ajouterFeedback',
+                  templateUrl: 'tpl/pageApp/ajouterFeedback.html'
+              })
+			  .state('app.consulterFeedback', {
+                  url: '/consulterFeedback',
+                  templateUrl: 'tpl/pageApp/consulterFeedback.html'
+              })
+			  .state('app.evaluerObjectif', {
+                  url: '/evaluerObjectif',
+                  templateUrl: 'tpl/pageApp/evaluerObjectif.html'
+              })
+			  .state('app.ancienFeedback', {
+                  url: '/ancienFeedback',
+                  templateUrl: 'tpl/pageApp/ancienFeedback.html'
+              })
+			  .state('app.ancienEvaluation', {
+                  url: '/ancienEvaluation',
+                  templateUrl: 'tpl/pageApp/ancienEvaluation.html'
+              })
+			  
 			  
               .state('app.dashboard-v2', {
                   url: '/dashboard-v2',

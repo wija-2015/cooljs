@@ -1,0 +1,71 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Gestions des Feedbacks</h1>
+</div>
+<div class="wrapper-md" ng-controller="FeedbackCtrl">
+	<!--<button class="btn m-b-xs btn-sm btn-primary btn-addon" data-target="#ajouterCollab" data-toggle="modal">Ajouter un collaborateur</button>
+  -->
+
+      <div class="col-sm-6">
+        <form name="formValidate" class="form-horizontal form-validation">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <strong>Informations  du  feedback</strong>
+            </div> 
+            <div class="panel-body">                    
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Mtricule Collaborateur </label>
+                <div class="col-sm-9">
+			       <select class="form-control m-t"	ng-model="feedback.idCollaborateur" required>
+			          <option ng-repeat="c in collaborateurs" ng-value="c.idCollaborateur">{{c.matriculeUser}}</option>
+		           </select>  
+
+                </div>
+				</div>
+				<div class="form-group">
+                <label class="col-sm-3 control-label">Matricule Projet </label>
+                <div class="col-sm-9">
+			       <select class="form-control m-t"	ng-model="feedback.idProjet" required>
+			          <option ng-repeat="p in projets" ng-value="p.idProjet">{{p.codeProjet}}</option>
+		           </select>  
+
+                </div>
+				</div>
+				<div class="form-group">
+				 <label class="col-sm-3 control-label">Date début de l'intervention </label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" placeholder="required field" ng-model="feedback.dateDebut" required >
+                </div>
+				</div>
+				<div class="form-group">
+				 <label class="col-sm-3 control-label">Date fin de l'intervention </label>
+                <div class="col-sm-9">
+                  <input type="date" class="form-control" placeholder="required field" ng-model="feedback.dateFin" required >
+                </div>
+				</div>
+				<div class="form-group">
+				 <label class="col-sm-3 control-label">Role</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="required field" ng-model="feedback.role" required >
+                </div>
+				</div>
+				<div class="form-group">
+				 <label class="col-sm-3 control-label">Nombre de jours valorisés</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" placeholder="required field" ng-model="feedback.nbJours" required >
+                </div>
+				</div>
+              
+
+            </div>
+            <footer class="panel-footer text-right bg-light lter">
+              
+			    <button type="submit" class="btn btn-primary" ng-click="inserer_feedback()">Envoyer </button>
+				 <button class="btn btn-danger" ng-click="vider()">Vider</button>
+            </footer>
+          </div>
+        </form>
+      </div>
+	<div class="col-sm-6" ng-if="newfeedback"> {{newfeedback}}</div>
+</div>
+	
+  

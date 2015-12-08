@@ -31,11 +31,12 @@ private ICollabService collabService;
 @Autowired
 private IManagerService managerService ;
 
-@ResponseBody
+
 @RequestMapping(value="findAll", method = RequestMethod.GET)
 public List<Collaborateur> getCollabs(){
 return  collabService.toutsCollabs();
 }
+
 @RequestMapping(value="save", method = RequestMethod.POST,consumes={"application/json"},produces ={"application/json"})
 public Collaborateur saveCollab(@RequestBody CollaborateurDTO c,HttpServletResponse response){
 

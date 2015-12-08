@@ -14,7 +14,6 @@ import java.util.Collection;
 
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Managerrh implements Serializable {
 	
 	@Id

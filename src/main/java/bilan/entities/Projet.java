@@ -12,7 +12,6 @@ import java.util.Collection;
 
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Projet implements Serializable {
 
 	@Id

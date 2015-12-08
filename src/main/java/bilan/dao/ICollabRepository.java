@@ -31,11 +31,10 @@ public interface ICollabRepository extends JpaRepository<Collaborateur, Long> {
 	@Query("update Collaborateur c set c.nomUser= :nom, c.prenomUser= :prenom where c.idCollaborateur = :x")
 	public int updateCollab(@Param("nom")String nom,@Param("prenom")String prenom,@Param("x")int id);
 	
-	//public List<Collaborateur> findAll();
 	
 
-	@Query("select c.nomUser, c.prenomUser, c.matriculeUser,c.dateRecrutement, c.mailUser, m.nomUser, m.prenomUser from Collaborateur c, Managerrh m where m.idManagerrh=c.managerrh.idManagerrh")
-	public List<Collaborateur> findAllCollabs();
+	/*@Query("select c.nomUser, c.prenomUser, c.matriculeUser,c.dateRecrutement, c.mailUser, m.nomUser, m.prenomUser from Collaborateur c, Managerrh m where m.idManagerrh=c.managerrh.idManagerrh")
+	public List<Collaborateur> findAllCollabs();*/
 	
 	//@Query("insert into User (id, name) select c.id, c.name from Customer c where ...")
 	//public User updateUser(@Param("nom")String nom,@Param("prenom")String prenom);

@@ -17,7 +17,6 @@ import java.util.Date;
 
 
 @Entity
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 public class Collaborateur implements Serializable {
 	
 	@Id
@@ -31,18 +30,18 @@ public class Collaborateur implements Serializable {
 	private String password;
 
 	//bi-directional many-to-one association to Bap
-	@JsonIgnore
 	@OneToMany(mappedBy="collaborateur")
 	private Collection<Bap> baps;
 
 	//bi-directional many-to-one association to Managerrh
 	//@JsonBackReference
-	@JsonIgnore
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="id_managerrh")
 	private Managerrh managerrh;
 
 	//bi-directional many-to-one association to Evaluationobjectif
+	@JsonIgnore
 	@OneToMany(mappedBy="collaborateur")
 	private Collection<EvaluationObjectif> evaluationobjectifs;
 
@@ -113,7 +112,7 @@ public class Collaborateur implements Serializable {
 	public void setDateRecrutement(Date dateRecrutement) {
 		this.dateRecrutement = dateRecrutement;
 	}
-
+	@JsonIgnore
 	public Collection<Bap> getBaps() {
 		return this.baps;
 	}
@@ -121,7 +120,7 @@ public class Collaborateur implements Serializable {
 	public void setBaps(Collection<Bap> baps) {
 		this.baps = baps;
 	}
-	@JsonGetter
+	
 	public Managerrh getManagerrh() {
 		return this.managerrh;
 	}

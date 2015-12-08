@@ -1,0 +1,50 @@
+<div class="bg-light lter b-b wrapper-md">
+  <h1 class="m-n font-thin h3">Gestions des fiches d'objectifs</h1>
+</div>
+<div class="wrapper-md" ng-controller="FicheCtrl">
+	<!--<button class="btn m-b-xs btn-sm btn-primary btn-addon" data-target="#ajouterCollab" data-toggle="modal">Ajouter un collaborateur</button>
+  -->
+   <div class="panel b-a col-sm-6">
+         
+          <div class="panel-heading b-b b-light">Choisir un collaborateur</div>
+          <div class="panel-body">
+             <select value="Selectionner Collaborateur" ng-model="collaborateur.idCollaborateur"><option ng-repeat="c in collaborateurs" ng-value="c.idCollaborateur">{{c.matriculeUser}}</option></select>  
+          </div>
+    </div>
+	
+	<div ng-if="collaborateurs">
+	hiiiiiiiiiiiiii
+	</div>
+	</div>
+	
+   <!-- <div class="panel panel-default">
+    <div class ="panel-heading">
+      La liste des collaborateurs
+    </div>
+
+    <div class="table-responsive">
+	<p></p>
+      <table  class="table table-striped b-t b-b">
+        <thead>
+          <tr>
+            <th  style="width:15%">Nom </th>
+            <th  style="width:15%">Prénom</th>
+			 <th  style="width:15%">Matricule</th>
+			 <th  style="width:15%">Date de recrutement</th>
+            <th  style="width:15%">Email</th>
+			 <th  style="width:15%">Nom Manager RH</th>
+			 <th  style="width:15%">Prénom Manager RH</th>
+			 <th  style="width:15%">Action</th>
+          </tr>
+		  <tr ng-repeat="c in collaborateurs"><td>{{c[0]}}</td><td>{{c[1]}}</td><td>{{c[2]}}</td><td>{{c[3]|date:'yyyy-MM-dd'}}</td><td>{{c[4]}}</td>
+		  <td>{{c[5]}}</td><td>{{c[6]}}</td><td><button class="btn btn-info" onclick="supprimer(c.idCollaborateur)">Modifier</button></td></tr>
+        </thead>
+      
+        <tbody>
+        </tbody>
+      </table>
+	  
+	  
+    </div>
+  </div> -->
+

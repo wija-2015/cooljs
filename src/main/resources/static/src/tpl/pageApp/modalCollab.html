@@ -46,14 +46,13 @@
 
 			<div class="form-group">
 
-			<div class="form-group" ng-controller="ManagerCtrl">
+			<div class="form-group">
               <label class="col-lg-2 control-label">Manager RH</label>
               <div class="col-lg-10">
            <!--    <select class="form-control" ng-model="collaborateur.idManagerrh"><option>1</option><option>2</option><option>3</option></select>-->
             <select ng-model="collaborateur.idManagerrh"><option ng-repeat="m in managers" ng-value="m.idManagerrh">{{m.matriculeUser}}</option></select>  
               
 			   </div>
-
             </div>
             
             <div class="form-group">

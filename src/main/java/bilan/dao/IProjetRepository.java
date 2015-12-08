@@ -26,7 +26,7 @@ public interface IProjetRepository extends JpaRepository<Projet, Long>{
 	@Query("update Projet a set a.nomProjet= :nom where a.idProjet = :x")
 	public int updateProjet(@Param("nom")String nom,@Param("x")int id);
 	
-	@Query("select m.nomProjet, m.codeProjet from Projet m")
+	@Query("select m from Projet m")
 	public List<Projet> findAllProjets();
 	
 	//public List<Admin> findAll();

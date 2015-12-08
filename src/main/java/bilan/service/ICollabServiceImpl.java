@@ -18,7 +18,7 @@ public class ICollabServiceImpl implements ICollabService {
 
 	@Override
 	public List<Collaborateur> toutsCollabs() {
-		return collabRepository.findAllCollabs();
+		return collabRepository.findAll();
 		//return collabRepository.findAll();
 	}
 

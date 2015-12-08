@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import java.util.Collection;
 import java.util.Date;
 
@@ -45,7 +48,7 @@ public class Feedback implements Serializable {
 	public Feedback() {
 	}
 
-	public Feedback(int idFeedback, String role, int nbJours, Date dateDebut,
+/*	public Feedback(int idFeedback, String role, int nbJours, Date dateDebut,
 			Date dateFin, String commentaire, int nbThemes, int totalPoints,
 			float noteGlobale, Collaborateur collaborateur,
 			Encadrant encadrant, Projet projet,
@@ -60,11 +63,7 @@ public class Feedback implements Serializable {
 		this.nbThemes = nbThemes;
 		this.totalPoints = totalPoints;
 		this.noteGlobale = noteGlobale;
-		this.collaborateur = collaborateur;
-		this.encadrant = encadrant;
-		this.projet = projet;
-		this.qualifications = qualifications;
-	}
+	}*/
 
 	public int getIdFeedback() {
 		return idFeedback;
@@ -137,11 +136,11 @@ public class Feedback implements Serializable {
 	public void setNoteGlobale(float noteGlobale) {
 		this.noteGlobale = noteGlobale;
 	}
-
+	@JsonIgnore
 	public Collaborateur getCollaborateur() {
 		return this.collaborateur;
 	}
-
+	@JsonSetter
 	public void setCollaborateur(Collaborateur collaborateur) {
 		this.collaborateur = collaborateur;
 	}
@@ -149,7 +148,7 @@ public class Feedback implements Serializable {
 	public Encadrant getEncadrant() {
 		return this.encadrant;
 	}
-
+	@JsonSetter
 	public void setEncadrant(Encadrant encadrant) {
 		this.encadrant = encadrant;
 	}
@@ -157,7 +156,7 @@ public class Feedback implements Serializable {
 	public Projet getProjet() {
 		return this.projet;
 	}
-
+	@JsonSetter
 	public void setProjet(Projet projet) {
 		this.projet = projet;
 	}
@@ -165,7 +164,7 @@ public class Feedback implements Serializable {
 	public Collection<Qualification> getQualifications() {
 		return this.qualifications;
 	}
-
+	@JsonSetter
 	public void setQualifications(Collection<Qualification> qualifications) {
 		this.qualifications = qualifications;
 	}

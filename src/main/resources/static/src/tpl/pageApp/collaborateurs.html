@@ -13,9 +13,9 @@
             <button class="btn m-b-xs btn-sm btn-info btn-addon" ng-click="open()">Ajouter Collaborateur</button>
           </div>
       </div>
-  <div class="panel panel-default">
+   <div class="panel panel-default">
     <div class ="panel-heading">
-      La liste des collaborateurs 
+      La liste des collaborateurs
     </div>
 
     <div class="table-responsive">
@@ -32,8 +32,8 @@
 			 <th  style="width:15%">Prénom Manager RH</th>
 			 <th  style="width:15%">Action</th>
           </tr>
-		  <tr ng-repeat="c in collaborateurs"><td>{{c[0]}}</td><td>{{c[1]}}</td><td>{{c[2]}}</td><td>{{c[3]|date:'yyyy-MM-dd'}}</td><td>{{c[4]}}</td>
-		  <td>{{c[5]}}</td><td>{{c[6]}}</td><td><button class="btn btn-info" onclick="supprimer(c.idCollaborateur)">Modifier</button></td></tr>
+		  <tr ng-repeat="c in collaborateurs"><td>{{c.nomUser}}</td><td>{{c.prenomUser}}</td><td>{{c.matriculeUser}}</td><td>{{c.dateRecrutement|date:'yyyy-MM-dd'}}</td><td>{{c.mailUser}}</td>
+		  <td>{{c.managerrh.prenomUser}}</td><td>{{c.managerrh.nomUser}}</td><td><button class="btn btn-info" onclick="supprimer(c.idCollaborateur)">Modifier</button></td></tr>
         </thead>
       
         <tbody>

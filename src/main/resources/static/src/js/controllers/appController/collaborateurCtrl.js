@@ -25,8 +25,9 @@ app.controller('ModalInstanceCtrlCollab', ['$scope','$http','$modalInstance','Ma
     	.success(function(response) {  
 		          console.log(response);
 				  console.log(JSON.stringify($scope.collaborateur));
+				  
 				  $scope.cancel();
-				  alerte("Ajout Succés")});
+				  });
 
     };
 
